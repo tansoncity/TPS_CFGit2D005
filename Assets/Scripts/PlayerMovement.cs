@@ -33,7 +33,8 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateNavigating()
     {
         var moveInput = _moveAction.ReadValue<Vector2>();
-        var direction = new Vector3(moveInput.x, 0, moveInput.y).normalized;
+        var direction = transform.right * moveInput.x + transform.forward * moveInput.y;
+        direction = direction.normalized;
         _velocity.x = direction.x * _walkSpeed;
         _velocity.z = direction.z * _walkSpeed;
     }

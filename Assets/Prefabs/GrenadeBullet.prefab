@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5032653417062213140}
   - component: {fileID: 8328823890878274338}
   - component: {fileID: -3082774654269059083}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GrenadeBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &-3082774654269059083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154,3 +154,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _explosionPrefab: {fileID: 100006, guid: 4575df893a6e3f64a8283dee38413a34, type: 3}
+  _explosionRadius: 5
+  _explosionForce: 20
