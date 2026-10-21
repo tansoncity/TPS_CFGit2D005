@@ -7,14 +7,12 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private float _walkSpeed = 5f;
     [SerializeField] private float _jumpSpeed = 7f;
-    [SerializeField] private float _lookSpeed = 60f;
     [SerializeField] private CharacterController _characterController;
 
     private Vector3 _velocity;
 
     private InputAction _moveAction;
     private InputAction _jumpAction;
-    private InputAction _lookAction;
 
     private void Start()
     {
@@ -22,24 +20,14 @@ public class PlayerMovement : MonoBehaviour
         _moveAction.Enable();
         _jumpAction= InputSystem.actions["Jump"];
         _jumpAction.Enable();
-        _lookAction = InputSystem.actions["Look"];
-        _lookAction.Enable();
     }
 
     private void Update()
     {
-        UpdateLooking();
         UpdateNavigating();
         UpdateJumping();
         UpdateFalling();
         _characterController.Move(_velocity * Time.deltaTime);
-    }
-
-    private void UpdateLooking()
-    {
-        var lookInput = _lookAction.ReadValue<Vector2>();
-        var deltaAngle = lookInput.x * _lookSpeed * Time.deltaTime;
-        transform.Rotate(0, deltaAngle, 0);
     }
 
     private void UpdateNavigating()
