@@ -2,13 +2,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public enum ChasingState
-{
-    Lost,
-    Chasing,
-    Reached
-}
-
 public class Chasing : MonoBehaviour
 {
     [SerializeField] private Transform _target;
@@ -16,49 +9,13 @@ public class Chasing : MonoBehaviour
     [SerializeField] private float _chasingRadius = 5f;
     [SerializeField] private float _reachingRadius = 1f;
 
-    public UnityEvent TargetReached;
-    public UnityEvent TargetLost;
-    public UnityEvent ChasingStarted;
+    private float TargetDistance => Vector3.Distance(transform.position, _target.position);
 
-    private ChasingState _currentState = ChasingState.Lost;
+    public void UpdateChasing() => _navMeshAgent.SetDestination(_target.position);
 
-    private void Update()
-    {
-        if (_target == null) return;
+    public void StopChasing() => _navMeshAgent.ResetPath();
 
-        var distance = Vector3.Distance(transform.position, _target.position);
-        if (distance > _chasingRadius)
-        {
-            SwitchTo(ChasingState.Lost);
-            _navMeshAgent.ResetPath();
-        }
-        else if (distance > _reachingRadius)
-        {
-            SwitchTo(ChasingState.Chasing);
-            _navMeshAgent.SetDestination(_target.position);
-        }
-        else
-        {
-            SwitchTo(ChasingState.Reached);
-            _navMeshAgent.ResetPath();
-        }
-    }
+    public bool IsInChasingRange() => TargetDistance <= _chasingRadius;
 
-    private void SwitchTo(ChasingState newState)
-    {
-        if (_currentState == newState) return;
-        _currentState = newState;
-        switch (newState)
-        {
-            case ChasingState.Lost:
-                TargetLost?.Invoke();
-                break;
-            case ChasingState.Chasing:
-                ChasingStarted?.Invoke();
-                break;
-            case ChasingState.Reached:
-                TargetReached?.Invoke();
-                break;
-        }
-    }
+    public bool IsReached => TargetDistance <= _reachingRadius;
 }
