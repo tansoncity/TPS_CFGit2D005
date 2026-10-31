@@ -45,4 +45,12 @@ public class WeaponSwitcher : MonoBehaviour
         }
         _selectedIndex = index;
     }
+
+    public void LockAllWeapons()
+    {
+        for (int i = 0; i < _weapons.Length; i++)
+        {
+            _weapons[i].weapon.GetComponent<Shooting>().Lock();
+        }
+    }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
-public class AutomaticShooting : MonoBehaviour
+public class AutomaticShooting : Shooting
 {
     [SerializeField] private float _coolDown;
 

@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Events;
 
-public class ManualShooting : MonoBehaviour
+public class ManualShooting : Shooting
 {
     public UnityEvent BulletShot;
 

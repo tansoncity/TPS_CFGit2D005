@@ -1,8 +1,10 @@
 using UnityEngine;
-
+using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int _maxHealthPoint = 100;
+
+    public UnityEvent Dead;
 
     private int _healthPoint;
 
@@ -21,5 +23,5 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void Die() => Destroy(gameObject);
+    private void Die() => Dead?.Invoke();
 }
