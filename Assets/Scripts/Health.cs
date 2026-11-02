@@ -23,5 +23,9 @@ public class Health : MonoBehaviour
         }
     }
 
-    private void Die() => Dead?.Invoke();
+    private void Die() 
+    {
+        Dead?.Invoke();
+        gameObject.BroadcastMessage("OnDead", SendMessageOptions.DontRequireReceiver);
+    }
 }

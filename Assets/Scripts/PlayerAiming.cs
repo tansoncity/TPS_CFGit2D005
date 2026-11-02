@@ -53,4 +53,6 @@ public class PlayerAiming : MonoBehaviour
         _pitch = Mathf.Clamp(_pitch + deltaAngle, _minPitch, _maxPitch);
         _cameraTarget.localEulerAngles = new Vector3(_pitch, 0, 0);
     }
+
+    private void OnDead() => enabled = false;
 }

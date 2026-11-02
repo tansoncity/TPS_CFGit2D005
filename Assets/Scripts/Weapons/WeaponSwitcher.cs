@@ -53,4 +53,10 @@ public class WeaponSwitcher : MonoBehaviour
             _weapons[i].weapon.GetComponent<Shooting>().Lock();
         }
     }
+
+    private void OnDead()
+    {
+        LockAllWeapons();
+        enabled = false;
+    }
 }

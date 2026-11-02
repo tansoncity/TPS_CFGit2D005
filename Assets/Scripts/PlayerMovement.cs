@@ -58,4 +58,10 @@ public class PlayerMovement : MonoBehaviour
             _velocity.y += Physics.gravity.y * Time.deltaTime;
         }
     }
+
+    private void OnDead()
+    {
+        enabled = false;
+        _characterController.enabled = false;
+    }
 }
