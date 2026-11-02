@@ -54,7 +54,11 @@ public class WeaponSwitcher : MonoBehaviour
         }
     }
 
-    private void OnDead()
+    private void OnDead() => StopAll();
+
+    private void OnVictory() => StopAll();
+
+    private void StopAll()
     {
         LockAllWeapons();
         enabled = false;

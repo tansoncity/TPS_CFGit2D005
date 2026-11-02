@@ -54,5 +54,9 @@ public class PlayerAiming : MonoBehaviour
         _cameraTarget.localEulerAngles = new Vector3(_pitch, 0, 0);
     }
 
-    private void OnDead() => enabled = false;
+    private void OnDead() => StopAll();
+
+    private void OnVictory() => StopAll();
+    
+    private void StopAll() => enabled = false;
 }

@@ -59,7 +59,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void OnDead()
+    private void OnDead() => StopAll();
+
+    private void OnVictory() => StopAll();
+
+    private void StopAll()
     {
         enabled = false;
         _characterController.enabled = false;
