@@ -4,6 +4,8 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int _maxHealthPoint = 100;
 
+    public UnityEvent DamageTaken;
+
     public UnityEvent Dead;
 
     private int _healthPoint;
@@ -17,6 +19,8 @@ public class Health : MonoBehaviour
         if (IsDead) return;
 
         _healthPoint -= damage;
+        DamageTaken?.Invoke();
+        
         if (IsDead)
         {
             Die();
