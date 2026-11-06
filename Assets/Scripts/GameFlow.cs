@@ -22,7 +22,10 @@ public class GameFlow : MonoBehaviour
         _enemyManager.AllEnemyCleared.AddListener(OnAllEnemyCleared);
     }
 
-    private void OnAllEnemyCleared() => CustomEvent.Trigger(gameObject, "AllEnemyCleared");
+    private void OnAllEnemyCleared()
+    {
+        //CustomEvent.Trigger(gameObject, "AllEnemyCleared");
+    }
 
     private void OnDestroy()
     {

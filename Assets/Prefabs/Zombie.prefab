@@ -76,6 +76,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _maxHealthPoint: 5
+  DamageTaken:
+    m_PersistentCalls:
+      m_Calls: []
   Dead:
     m_PersistentCalls:
       m_Calls: []
@@ -107,7 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8b6c52d8c5044dc83299239b30b73e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _attackInterval: 1
   _damage: 10
   _targetHealth: {fileID: 0}
 --- !u!195 &4656358646696428602
@@ -259,13 +261,48 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3900321574406143064}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!4 &1849569225744935632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 578376449398627443, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   m_PrefabInstance: {fileID: 1273449117445404323}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &3454723472500168899 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  m_PrefabInstance: {fileID: 1273449117445404323}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3900321574406143064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3454723472500168899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 471b6b2c6da2f40fab6db132c66668f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  OnHandDownEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4622427660346875110}
+        m_TargetAssemblyTypeName: Attacking, Assembly-CSharp
+        m_MethodName: OnHandDown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &8584140891538704298 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
