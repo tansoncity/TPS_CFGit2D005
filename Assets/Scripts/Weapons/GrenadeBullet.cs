@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GrenadeBullet : MonoBehaviour
@@ -6,6 +7,7 @@ public class GrenadeBullet : MonoBehaviour
     [SerializeField] private float _explosionRadius;
     [SerializeField] private float _explosionForce;
     [SerializeField] private int _damage = 10;
+    [SerializeField] private LayerMask _hitLayer;
 
     private void OnCollisionEnter(Collision _)
     {
@@ -16,19 +18,21 @@ public class GrenadeBullet : MonoBehaviour
 
     private void Explode()
     {
-        var victims = Physics.OverlapSphere(
-            transform.position, _explosionRadius);
+        List<Health> processed = new List<Health>();
+        var victims = Physics.OverlapSphere(transform.position, _explosionRadius, _hitLayer);
         foreach (var victim in victims)
         {
-            if (victim.TryGetComponent<Health>(out var health))
+            var health = victim.GetComponentInParent<Health>();
+            if (health != null && !processed.Contains(health))
             {
-                health.TakeDamage(_damage); // Example damage value
+                health.TakeDamage(_damage);
+                processed.Add(health);
             }
             if (victim.attachedRigidbody != null)
             {
                 victim.attachedRigidbody.AddExplosionForce(
                     _explosionForce, transform.position,
-                    _explosionRadius, 0f, ForceMode.Impulse);
+                    _explosionRadius, 1f, ForceMode.Impulse);
             }
         }
     }

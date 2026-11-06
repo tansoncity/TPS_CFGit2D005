@@ -24,7 +24,8 @@ public class BulletRaycaster : MonoBehaviour
         var marker = Instantiate(_hitMarkerPrefab, hitInfo.point, lookDirection);
         marker.SetParent(hitInfo.collider.transform, worldPositionStays: true);
 
-        if (hitInfo.collider.TryGetComponent<Health>(out var health))
+        var health = hitInfo.collider.GetComponentInParent<Health>();
+        if (health != null)
         {
             health.TakeDamage(_damage);
         }
