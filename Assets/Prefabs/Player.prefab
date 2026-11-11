@@ -355,6 +355,7 @@ MonoBehaviour:
   _walkSpeed: 5
   _jumpSpeed: 7
   _characterController: {fileID: 8106955297349852768}
+  _animator: {fileID: 8741162762278298326}
 --- !u!143 &8106955297349852768
 CharacterController:
   m_ObjectHideFlags: 0
@@ -447,7 +448,19 @@ MonoBehaviour:
       m_Calls: []
   Dead:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8741162762278298326}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Dead
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5019657305381254234
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1284,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 35f257c013a414ecc8626408671a637d, type: 3}
   m_PrefabInstance: {fileID: 2892521049599565639}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8741162762278298326 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 35f257c013a414ecc8626408671a637d, type: 3}
+  m_PrefabInstance: {fileID: 2892521049599565639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4386761617205452034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1446,7 +1464,7 @@ MonoBehaviour:
   BulletShot:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4830414730763615154}
         m_TargetAssemblyTypeName: BulletRaycaster, Assembly-CSharp
         m_MethodName: Shoot
         m_Mode: 1
