@@ -409,8 +409,8 @@ MonoBehaviour:
   _eventListeners:
   - {fileID: 6142430606329002009}
   - {fileID: 3884084757044681801}
-  _gameOverPanel: {fileID: 0}
-  _victoryPanel: {fileID: 0}
+  _gameOverPanel: {fileID: 3620138910517455292}
+  _victoryPanel: {fileID: 8391194133422058096}
   _playerHealth: {fileID: 3941820699644395889}
   _enemyManager: {fileID: 2928985851651166804}
 --- !u!114 &1228668592497512227
@@ -475,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 5029324842444720944}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.61357, y: 2.3899999, z: -11.16}
+  m_LocalPosition: {x: 2.29457, y: 2.35, z: -10.974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -748,7 +748,7 @@ Transform:
   m_GameObject: {fileID: 6528159770651074277}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.61357, y: 2.3899999, z: -11.16}
+  m_LocalPosition: {x: 2.29457, y: 2.35, z: -10.974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1068,7 +1068,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408576549594895768, guid: 01e767a301f7347be89269806341d51d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4408576549594895768, guid: 01e767a301f7347be89269806341d51d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1102,14 +1102,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4830414730763615154, guid: 01e767a301f7347be89269806341d51d, type: 3}
+      propertyPath: _aimingCamera
+      value: 
+      objectReference: {fileID: 5311548759498114108}
     - target: {fileID: 4990362593442277775, guid: 01e767a301f7347be89269806341d51d, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 6294646393082947457, guid: 01e767a301f7347be89269806341d51d, type: 3}
-      propertyPath: _aimingCamera
-      value: 
-      objectReference: {fileID: 5311548759498114108}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -1677,6 +1677,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6373f730dd4344e11838d327cc44a7ff, type: 3}
   m_PrefabInstance: {fileID: 2106027340}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1252909516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6014008491327793700, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
+  m_PrefabInstance: {fileID: 1482833470541101220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67eef8a0d4aa54f7c9559480f98627e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BulletRaycaster
 --- !u!1001 &1512742303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1908,11 +1919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cac81b8fefdb4479926a476ee90707b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
---- !u!1 &1911416542 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8391194133422058096, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-  m_PrefabInstance: {fileID: 1482833470541101220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1934610655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1974,11 +1980,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6373f730dd4344e11838d327cc44a7ff, type: 3}
---- !u!1 &2026169598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3620138910517455292, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-  m_PrefabInstance: {fileID: 1482833470541101220}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2076780222 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6373f730dd4344e11838d327cc44a7ff, type: 3}
@@ -2223,25 +2224,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2798215521553433515, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
+      propertyPath: BulletShot.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1252909516}
     - target: {fileID: 2928985851651166804, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
       propertyPath: '_enemies.Array.data[0]'
       value: 
       objectReference: {fileID: 1629998100}
-    - target: {fileID: 3265515736231347214, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4234870089813994494, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
       propertyPath: m_Name
       value: Level
-      objectReference: {fileID: 0}
-    - target: {fileID: 5311548759498114108, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 6209047693045914317, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.35
       objectReference: {fileID: 0}
     - target: {fileID: 8773964342766098897, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2283,14 +2276,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8919023587395161108, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-      propertyPath: _victoryPanel
-      value: 
-      objectReference: {fileID: 1911416542}
-    - target: {fileID: 8919023587395161108, guid: 4eb6bf977bd694f458dcda45e4b2a808, type: 3}
-      propertyPath: _gameOverPanel
-      value: 
-      objectReference: {fileID: 2026169598}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
