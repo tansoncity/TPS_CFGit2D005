@@ -1,3 +1,4 @@
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -7,6 +8,8 @@ public class PlayerAiming : MonoBehaviour
     [SerializeField] private float _lookSpeed = 60f;
     [SerializeField] private float _minPitch = -90f;
     [SerializeField] private float _maxPitch = 90f;
+    [SerializeField] private CinemachineThirdPersonAim _tpsAim;
+    [SerializeField] private Transform _targetMarker;
 
     private InputAction _lookAction;
     private float _pitch;
@@ -38,6 +41,8 @@ public class PlayerAiming : MonoBehaviour
         var lookInput = _lookAction.ReadValue<Vector2>();
         UpdateYaw(lookInput.x);
         UpdatePitch(lookInput.y);
+
+        _targetMarker.position = _tpsAim.AimTarget;
     }
 
     private void UpdateYaw(float horizontalInput)
@@ -59,4 +64,14 @@ public class PlayerAiming : MonoBehaviour
     private void OnVictory() => StopAll();
     
     private void StopAll() => enabled = false;
+
+    private void OnDrawGizmos()
+    {
+        if (_targetMarker != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawSphere(_targetMarker.position, 0.1f);
+            Gizmos.DrawLine(_cameraTarget.position, _tpsAim.AimTarget);
+        }
+    }
 }

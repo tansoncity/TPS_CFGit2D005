@@ -475,7 +475,7 @@ Transform:
   m_GameObject: {fileID: 5029324842444720944}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.29457, y: 2.35, z: -10.974}
+  m_LocalPosition: {x: 2.29457, y: 1.78, z: -10.974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -748,7 +748,7 @@ Transform:
   m_GameObject: {fileID: 6528159770651074277}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.29457, y: 2.35, z: -10.974}
+  m_LocalPosition: {x: 2.29457, y: 1.78, z: -10.974}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -811,7 +811,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineThirdPersonFollow
   Damping: {x: 0.1, y: 0.5, z: 0.3}
   ShoulderOffset: {x: 1.61, y: 0, z: 0}
-  VerticalArmLength: 1.05
+  VerticalArmLength: 0.48
   CameraSide: 1
   CameraDistance: 3.52
   AvoidObstacles:
@@ -1062,6 +1062,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8773964342766098897}
     m_Modifications:
+    - target: {fileID: 2540597479825697195, guid: 01e767a301f7347be89269806341d51d, type: 3}
+      propertyPath: _tpsAim
+      value: 
+      objectReference: {fileID: 7604537449189633569}
     - target: {fileID: 4408576549594895768, guid: 01e767a301f7347be89269806341d51d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.35357
